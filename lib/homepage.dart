@@ -41,15 +41,41 @@ class HomePage extends StatelessWidget {
               accountEmail: Text("dorlecreativa2608@gmail.com"),
               currentAccountPicture: GestureDetector( 
                 child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.pink,
-                  ),
-                ),
-              ),
+            radius: 130,
+            backgroundColor: Colors.red,
+            child: CircleAvatar(
+              radius: 120,
+              backgroundImage: NetworkImage(
+                  'https://raw.githubusercontent.com/Dorle-Zuniga-1113/cosmeticos_imagenes_app_flutter/refs/heads/main/pinkUser.png'),
+            ),
+          ),
+        ),
               
-            )
+            ),
+            InkWell(
+              onTap: (){},
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/home");},
+                leading: Icon(Icons.home, color: Colors.pink),
+                title: Text("Home Page"),
+              ),
+            ),
+            InkWell(
+              onTap: null,
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/producto");},
+                leading: Icon(Icons.person, color: Colors.black),
+                title: Text("Mis Productos"),
+              ),
+            ),
+            InkWell(
+              onTap: null,
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/empleado");},
+                leading: Icon(Icons.person, color: Colors.black),
+                title: Text("Mis Empleados "),
+              ),
+            ),
           ],
       ),
     ), 
